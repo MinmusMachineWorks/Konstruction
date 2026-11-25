@@ -19,7 +19,9 @@ namespace Konstruction
             if (kPoints > 0)
             {
                 var max = ApplyResults(kPoints);
-                ScreenMessages.PostScreenMessage($"EVA Construction set to {max / 1000:N2}t", 5f, ScreenMessageStyle.UPPER_CENTER);
+                ScreenMessages.PostScreenMessage(
+                    $"EVA Construction set to {max / 1000:N2}t within {ConstructionWeightLimitMonitor.BoostRange / 1000:N0} km",
+                    5f, ScreenMessageStyle.UPPER_CENTER);
             }
         }
 
@@ -94,9 +96,12 @@ namespace Konstruction
 
         public double ApplyResults(int points)
         {
-            // Calculate and set new mass limit
+            // Calculate and set new mass limit. Never go below stock, so a small crew can't
+            // make construction harder than it is without the Foreman. The monitor restores
+            // the stock limit once the active vessel leaves this vessel's range.
             var newMass = PhysicsGlobals.GravitationalAcceleration * points * constructionWeightMultiplier;
-            PhysicsGlobals.ConstructionWeightLimit = newMass;
+            newMass = Math.Max(newMass, ConstructionWeightLimitMonitor.StockLimit);
+            ConstructionWeightLimitMonitor.Apply(vessel, newMass);
 
             // Determine the gravity-adjusted mass limit for the current body
             var surfaceGravity = vessel.mainBody.gravParameter / Math.Pow(vessel.mainBody.Radius, 2d);
