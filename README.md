@@ -4,6 +4,12 @@
 > official `Konstruction` package. Releases are built by `.github/workflows/release.yml` from
 > `v*.*.*` tags. CKAN metadata lives in `ckan/metadata.json`.
 >
+> **Cargo volumes.** Upstream's `Patches/EVAConstructionTweaks.cfg` gave every part without a stock
+> cargo module one, sized by mass (1 t = 3600 L). This fork drops it and depends on
+> [KSP_PartVolume](https://github.com/linuxgurugamer/KSP_PartVolume) instead, which sizes parts by their model's
+> bounds and makes the ones it skips movable in EVA construction but not storable. CKAN installs it; for a
+> manual install, add it yourself.
+>
 > **Building.** The projects use [KSPBuildTools](https://github.com/KSPModdingLibs/KSPBuildTools) and
 > build with `dotnet build Source/Konstruction.sln`. Both DLLs land in
 > `FOR_RELEASE/GameData/UmbraSpaceIndustries/Konstruction/` and aren't committed. KSPBuildTools
