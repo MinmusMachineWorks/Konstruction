@@ -48,6 +48,10 @@ namespace Konstruction
             var construct = ShipConstruction.LoadShip(_selectedCraftFilePath);
             ShipConstruction.ShipConfig = constructBak;
 
+            // The craft file keeps the tank contents it was saved with, but the cost above only
+            // covers the empty vessel. Spawn it empty, as the orbital Konstructor does.
+            EmptyNonFreeResources(construct);
+
             ShipConstruction.PutShipToGround(construct, transform);
             ShipConstruction.AssembleForLaunch(
                 construct,

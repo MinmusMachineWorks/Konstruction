@@ -13,6 +13,24 @@ namespace Konstruction
     public abstract class AbstractKonstructorModule : PartModule, IKonstructor
     {
         private static List<string> FREE_RESOURCES = new List<string> { "Ablator", "ElectricCharge" };
+
+        /// <summary>
+        /// Empty every resource except the free ones (ElectricCharge, Ablator), the same way
+        /// the build cost is worked out, so a Konstructor never hands out fuel it didn't charge for.
+        /// </summary>
+        protected static void EmptyNonFreeResources(ShipConstruct construct)
+        {
+            foreach (var part in construct.parts)
+            {
+                foreach (var resource in part.Resources)
+                {
+                    if (!FREE_RESOURCES.Contains(resource.resourceName))
+                    {
+                        resource.amount = 0d;
+                    }
+                }
+            }
+        }
         protected List<CostData> _cachedCostData;
         protected float _cachedDryMass;
         protected float _cachedFundsCost;
