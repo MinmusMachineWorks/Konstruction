@@ -1,163 +1,24 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8699BBCB-15F3-40C6-A001-46E08886360C}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Konstruction</RootNamespace>
     <AssemblyName>Konstruction</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>portable</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>..\..\..\..\KSP_DEV\GameData\UmbraSpaceIndustries\Konstruction\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>none</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>..\..\..\..\KSP_DEV\GameData\000_USITools\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\..\KSP_DEV\KSP_x64_Data\Managed\Assembly-CSharp.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Assembly-CSharp-firstpass">
-      <HintPath>..\..\..\..\KSP_DEV\KSP_x64_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-    <Reference Include="UnityEngine">
-      <HintPath>..\..\..\..\KSP_DEV\KSP_x64_Data\Managed\UnityEngine.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEngine.AnimationModule">
-      <HintPath>..\..\..\..\KSP_DEV\KSP_x64_Data\Managed\UnityEngine.AnimationModule.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEngine.AssetBundleModule">
-      <HintPath>..\..\..\..\KSP_DEV\KSP_x64_Data\Managed\UnityEngine.AssetBundleModule.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\..\..\..\KSP_DEV\KSP_x64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEngine.ImageConversionModule">
-      <HintPath>..\..\..\..\KSP_DEV\KSP_x64_Data\Managed\UnityEngine.ImageConversionModule.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEngine.IMGUIModule">
-      <HintPath>..\..\..\..\KSP_DEV\KSP_x64_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEngine.PhysicsModule">
-      <HintPath>..\..\..\..\KSP_DEV\KSP_x64_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEngine.TextRenderingModule">
-      <HintPath>..\..\..\..\KSP_DEV\KSP_x64_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>..\..\..\..\KSP_DEV\KSP_x64_Data\Managed\UnityEngine.UI.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEngine.UIModule">
-      <HintPath>..\..\..\..\KSP_DEV\KSP_x64_Data\Managed\UnityEngine.UIModule.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="USITools">
-      <HintPath>..\..\..\..\KSP_DEV\GameData\000_USITools\USITools.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="USIToolsUI">
-      <HintPath>..\..\..\..\KSP_DEV\GameData\000_USITools\USIToolsUI.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
+    <ModReference Include="USITools">
+      <DLLPath>GameData/000_USITools/USITools.dll</DLLPath>
+      <CKANIdentifier>USITools</CKANIdentifier>
+    </ModReference>
+    <ModReference Include="USIToolsUI">
+      <DLLPath>GameData/000_USITools/USIToolsUI.dll</DLLPath>
+      <CKANIdentifier>USITools</CKANIdentifier>
+    </ModReference>
   </ItemGroup>
+
   <ItemGroup>
-    <Compile Include="Fabrication\DekonstructorGUI.cs" />
-    <Compile Include="Fabrication\InventoryConstraints.cs" />
-    <Compile Include="Fabrication\KonFabCommonGUI.cs" />
-    <Compile Include="Fabrication\ModuleDekonstructor.cs" />
-    <Compile Include="Fabrication\PartScrollbarData.cs" />
-    <Compile Include="Konstructor\AbstractKonstructorModule.cs" />
-    <Compile Include="Fabrication\FabricationGUI.cs" />
-    <Compile Include="Fabrication\ModuleKonFabricator.cs" />
-    <Compile Include="Konstructor\GroundKonstructorModule.cs" />
-    <Compile Include="Konstructor\OrbitalKonstructorModule.cs" />
-    <Compile Include="ResourceTransfers\ResourceTransferController.cs" />
-    <Compile Include="ResourceTransfers\ResourceTransferScenario.cs" />
-    <Compile Include="ResourceTransfers\ResourceTransferTarget.cs" />
-    <Compile Include="Settings\Konstruction_GameParameters.cs" />
-    <Compile Include="Utilities\PartUtilities.cs" />
-    <Compile Include="Misc\ModuleConstructedPart.cs" />
-    <Compile Include="Misc\ModuleCounterweight.cs" />
-    <Compile Include="Robotics\ModuleFlexiLeg.cs" />
-    <Compile Include="Robotics\ModuleFlexiLegController.cs" />
-    <Compile Include="Misc\ModuleGrippyWheel.cs" />
-    <Compile Include="Misc\ModuleGroundAnchor.cs" />
-    <Compile Include="EVA\ModuleKonstructionForeman.cs" />
-    <Compile Include="EVA\ModuleKonstructionHelper.cs" />
-    <Compile Include="Misc\ModuleMagneticNode.cs" />
-    <Compile Include="Robotics\ModulePiston.cs" />
-    <Compile Include="Robotics\ModuleServo.cs" />
-    <Compile Include="Robotics\ModuleServoConfig.cs" />
-    <Compile Include="Robotics\ModuleServoGroup.cs" />
-    <Compile Include="Settings\KonstructionConfig.cs" />
-    <Compile Include="Settings\KonstructionCostResource.cs" />
-    <Compile Include="Settings\KonstructionModuleResource.cs" />
-    <Compile Include="Settings\KonstructionPersistance.cs" />
-    <Compile Include="Settings\KonstructionScenario.cs" />
-    <Compile Include="Welding\ModuleWeldablePort.cs" />
-    <Compile Include="Welding\NodeUtilities.cs" />
-    <Compile Include="Robotics\ServoData.cs" />
-    <Compile Include="Robotics\ServoMonitor.cs" />
-    <Compile Include="Robotics\ServoPosition.cs" />
-    <Compile Include="Welding\WeldingData.cs" />
+    <!-- KonstructionUI copies itself into the mod folder; don't duplicate it here. -->
+    <ProjectReference Include="../KonstructionUI/KonstructionUI.csproj" Private="false" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\KonstructionUI\KonstructionUI.csproj">
-      <Project>{d487f008-632d-41c3-8827-7711eae23d15}</Project>
-      <Name>KonstructionUI</Name>
-      <Private>False</Private>
-    </ProjectReference>
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
-  </PropertyGroup>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+
 </Project>
