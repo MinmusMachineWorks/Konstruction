@@ -1,0 +1,63 @@
+{
+  "spec_version": "v1.4",
+  "identifier": "Konstruction-MM",
+  "name": "Konstruction (MMW)",
+  "abstract": "Weldable docking ports, cranes, magnets, and other construction equipment, with community fixes",
+  "description": "Minmus Machine Works fork of https://github.com/UmbraSpaceIndustries/Konstruction with community fixes. It replaces the official Konstruction package (provides and conflicts with it), so mods that depend on Konstruction still install.",
+  "author": [
+    "RoverDude",
+    "Machine-Maker"
+  ],
+  "license": "restricted",
+  "release_status": "stable",
+  "ksp_version_min": "1.8",
+  "ksp_version_max": "1.12.99",
+  "resources": {
+    "homepage": "https://github.com/MinmusMachineWorks/Konstruction",
+    "repository": "https://github.com/MinmusMachineWorks/Konstruction",
+    "x_upstream": "https://github.com/UmbraSpaceIndustries/Konstruction"
+  },
+  "provides": [
+    "Konstruction"
+  ],
+  "conflicts": [
+    {
+      "name": "Konstruction"
+    },
+    {
+      "name": "SETI-CommunityTechTree"
+    }
+  ],
+  "depends": [
+    {
+      "name": "FirespitterCore",
+      "min_version": "v7.6.0"
+    },
+    {
+      "name": "ModuleManager",
+      "min_version": "2.8.0"
+    },
+    {
+      "name": "USITools",
+      "min_version": "0.9.0.0"
+    },
+    {
+      "name": "CommunityResourcePack",
+      "min_version": "0.7.0.0"
+    },
+    {
+      "name": "CommunityCategoryKit",
+      "min_version": "2.0.0.0"
+    }
+  ],
+  "install": [
+    {
+      "find": "UmbraSpaceIndustries/Akita",
+      "install_to": "GameData/UmbraSpaceIndustries"
+    },
+    {
+      "find": "UmbraSpaceIndustries/Konstruction",
+      "install_to": "GameData/UmbraSpaceIndustries"
+    }
+  ]
+}
